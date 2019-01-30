@@ -47,15 +47,12 @@ class Album
       return albums.map { |album| Album.new(album) }
     end
 
-  #   def responsible_artist()
-  #   sql = "SELECT * FROM artists WHERE title = $1"
-  #   values = [@title]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |album| Album.new(album)}
-  # end
+    def resp_art()
+      sql = "SELECT * FROM artists WHERE id = $1"
+      values = [@artist_id]
+      results = SqlRunner.run(sql, values)
+      resp_art = results.map { |artist| Artist.new(artist)}
+      return resp_art[0].name
+    end
 
-
-
-
-
-end
+  end

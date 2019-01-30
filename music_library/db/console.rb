@@ -50,7 +50,5 @@ albums = Album.all
 
 
 
-
-
 binding.pry
 nil
